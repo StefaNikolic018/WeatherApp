@@ -1,0 +1,55 @@
+@mixin borderRadius {
+  border-radius: 2rem;
+}
+
+@mixin transition {
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin dropShadow {
+  box-shadow: 5px 5px 10px #060606, -5px -5px 10px #0c0e0e;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-mini {
+    @media only screen and (max-width: 420px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 550px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone-big {
+    @media only screen and (max-width: 700px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop-small {
+    @media only screen and (max-width: 1450px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop-big {
+    @media only screen and (min-width: 1800px) {
+      @content;
+    }
+  }
+}
