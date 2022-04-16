@@ -16,5 +16,8 @@ export const StyledContainer = styled.div<IStyledProps>`
   background: ${(props) => props.bg};
   .dataWrap {
     margin-top: 2rem;
+    .spinner {
+      margin-top: 5rem;
+    }
   }
 `;

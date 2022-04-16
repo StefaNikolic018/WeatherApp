@@ -51,8 +51,5 @@ export default function Temperature({ type }: IProps) {
     }
   };
 
-  // Dodati charts js ili tako neku biblioteku kao feature
-  // Uraditi JEST testove
-
   return weather?.hasData ? renderTemperature() : <></>;
 }
