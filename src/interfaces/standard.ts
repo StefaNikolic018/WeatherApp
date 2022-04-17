@@ -5,6 +5,7 @@ export interface IProps {
 export interface IDay {
   day: string;
   temp: number;
+  icon: string;
 }
 
 export interface ICountry {

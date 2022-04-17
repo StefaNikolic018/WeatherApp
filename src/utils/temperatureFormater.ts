@@ -41,12 +41,13 @@ export const dailyTemperature = (data: WeatherData | undefined | any) => {
 
   const dailyArray = data.daily.slice(1, 8);
   dailyArray.forEach((d: DailyData) => {
-    const day: IDay = { day: '', temp: 0 };
+    const day: IDay = { day: '', temp: 0, icon: '' };
     const date = new Date(d.dt * 1000).toLocaleDateString('en-US', {
       weekday: 'long',
     });
     day.day = date;
     day.temp = Math.round(d.temp.day);
+    day.icon = d.weather[0].icon;
     days.push(day);
   });
 

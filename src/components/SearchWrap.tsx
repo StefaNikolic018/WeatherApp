@@ -4,6 +4,7 @@ import { useDataContext } from '../contexts/DataContext';
 import { StyledSearchWrap } from './styled/StyledSearchWrap';
 import Search from './Search';
 import CountryDropdown from './CountryDropdown';
+import DegreeSwitch from './DegreeSwitch';
 
 export default function SearchWrap() {
   const weather = useDataContext();
@@ -16,7 +17,6 @@ export default function SearchWrap() {
   };
 
   const handleCountryChange = (code: string) => {
-    console.log(code);
     setCountryCode(code);
   };
 
@@ -26,6 +26,7 @@ export default function SearchWrap() {
     >
       <CountryDropdown handleCountryChange={handleCountryChange} />
       <Search handleKeyDown={handleKeyDown} />
+      <DegreeSwitch />
     </StyledSearchWrap>
   );
 }

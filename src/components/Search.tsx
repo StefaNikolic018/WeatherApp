@@ -14,6 +14,7 @@ export default function Search({ handleKeyDown }: IProps) {
   return (
     <span id="searchIcon">
       <input
+        autoFocus
         autoComplete="off"
         placeholder="Enter city"
         type="text"

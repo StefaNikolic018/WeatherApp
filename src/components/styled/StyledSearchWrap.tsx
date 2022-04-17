@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from './device';
 
 interface IStyledProps {
   loading: string | undefined;
@@ -35,7 +36,8 @@ export const StyledSearchWrap = styled.div<IStyledProps>`
   box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  position: relative;
   input {
     color: #434550;
     border-radius: 4px;
@@ -50,6 +52,9 @@ export const StyledSearchWrap = styled.div<IStyledProps>`
     }
     :focus-visible {
       outline: 0;
+    }
+    @media ${device.mobileL} {
+      padding-right: 3rem;
     }
   }
   #searchIcon {
@@ -93,6 +98,9 @@ export const StyledSearchWrap = styled.div<IStyledProps>`
     }
     &__control {
       height: 50px;
+      @media screen and (max-width: 550px) {
+        height: 40px;
+      }
     }
     &__placeholder,
     &__single-value,
@@ -111,7 +119,16 @@ export const StyledSearchWrap = styled.div<IStyledProps>`
       }
       span {
         font-weight: bold;
+        @media ${device.mobileL} {
+          display: none;
+        }
       }
     }
+  }
+  .degreeSwitch {
+    transform: rotate(90deg);
+    position: absolute;
+    right: 0.1rem;
+    top: 1.7rem;
   }
 `;

@@ -28,8 +28,10 @@ export default function Temperature({ type }: IProps) {
               {averageData[1]} - {averageData[2]} {averageData[3]}
             </p>
             <h1>
-              {averageData[0]}
-              <span>&deg;C</span>
+              {weather?.isCelsius
+                ? averageData[0]
+                : Math.round(Number(averageData[0]) * (9 / 5) + 32)}
+              <span>&deg;{weather?.isCelsius ? 'C' : 'F'}</span>
             </h1>
           </div>
         );
@@ -41,8 +43,14 @@ export default function Temperature({ type }: IProps) {
             <div key={d.day + d.temp}>
               <p>{d.day}</p>
               <h1>
-                {d.temp}
-                <span>&deg;C</span>
+                <img
+                  src={`http://openweathermap.org/img/wn/${d.icon}@2x.png`}
+                  alt="Weather Icon"
+                />
+                {weather?.isCelsius
+                  ? d.temp
+                  : Math.round(Number(d.temp) * (9 / 5) + 32)}
+                <span>&deg;{weather?.isCelsius ? 'C' : 'F'}</span>
               </h1>
             </div>
           );
