@@ -30,12 +30,14 @@ export default function CountryDropdown({ handleCountryChange }: IProps) {
       }}
       formatOptionLabel={(country) => (
         <div className="country__option">
-          <img
-            src={`https://flagcdn.com/h24/${country.Code.toLowerCase()}.jpg`}
-            alt={`${country.Name}`}
-            // height="20px"
-            width="30px"
-          />
+          <div className="flag">
+            <img
+              src={`https://flagcdn.com/h24/${country.Code.toLowerCase()}.jpg`}
+              alt={`${country.Name}`}
+              // height="20px"
+              width="30px"
+            />
+          </div>
           <span>{country.Code}</span>
         </div>
       )}

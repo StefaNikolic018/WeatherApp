@@ -5,6 +5,7 @@ import { useDataContext } from '../contexts/DataContext';
 import {
   averageTemperature,
   dailyTemperature,
+  degreeConvertor,
 } from '../utils/temperatureFormater';
 
 interface IProps {
@@ -30,7 +31,7 @@ export default function Temperature({ type }: IProps) {
             <h1>
               {weather?.isCelsius
                 ? averageData[0]
-                : Math.round(Number(averageData[0]) * (9 / 5) + 32)}
+                : degreeConvertor(Number(averageData[0]))}
               <span>&deg;{weather?.isCelsius ? 'C' : 'F'}</span>
             </h1>
           </div>
@@ -47,9 +48,7 @@ export default function Temperature({ type }: IProps) {
                   src={`http://openweathermap.org/img/wn/${d.icon}@2x.png`}
                   alt="Weather Icon"
                 />
-                {weather?.isCelsius
-                  ? d.temp
-                  : Math.round(Number(d.temp) * (9 / 5) + 32)}
+                {weather?.isCelsius ? d.temp : degreeConvertor(d.temp)}
                 <span>&deg;{weather?.isCelsius ? 'C' : 'F'}</span>
               </h1>
             </div>

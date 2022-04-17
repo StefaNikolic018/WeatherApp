@@ -111,7 +111,7 @@ export const StyledSearchWrap = styled.div<IStyledProps>`
       display: flex;
       align-items: center;
       gap: 10px;
-      img {
+      .flag {
         border-radius: 3px;
         border: 2px solid black;
         height: 20px;
@@ -130,5 +130,8 @@ export const StyledSearchWrap = styled.div<IStyledProps>`
     position: absolute;
     right: 0.1rem;
     top: 1.7rem;
+    @media screen and (max-width: 550px) {
+      right: -1rem;
+    }
   }
 `;

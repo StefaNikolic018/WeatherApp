@@ -18,14 +18,36 @@ export const StyledContainer = styled.div<IStyledProps>`
   background: ${(props) => props.bg};
   .dataWrap {
     margin-top: 2rem;
-    .spinner {
+    .message {
+      width: 100%;
       text-align: center;
       color: #434550;
       margin-top: 5rem;
     }
+    .spinner {
+      display: flex;
+      height: 20rem;
+      justify-content: center;
+      align-items: center;
+    }
   }
-  @media ${device.laptop} {
-    height: 100%;
+  .chart {
+    position: relative;
+    margin: auto;
+    width: 99%;
+    margin-bottom: 2rem;
+  }
+  .dailyWrap {
+    display: flex;
+    flex-direction: column;
+    @media ${device.laptop} {
+      .daily {
+        order: 2;
+      }
+      .chart {
+        order: 1;
+      }
+    }
   }
   @media ${device.tablet} {
     padding-inline: 5%;

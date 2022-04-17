@@ -53,3 +53,7 @@ export const dailyTemperature = (data: WeatherData | undefined | any) => {
 
   return days;
 };
+
+export const degreeConvertor = (degree: number) => {
+  return Math.round(Number(degree) * (9 / 5) + 32);
+};
