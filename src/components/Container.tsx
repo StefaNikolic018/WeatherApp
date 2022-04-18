@@ -16,10 +16,6 @@ export default function Container({ children }: IProps) {
   const bg = useBackgroundContext();
   const weather = useDataContext();
 
-  // TODO:
-  // 1) Uraditi testiranje uz Jest
-  // 2) Pokusati da sredim malo dizajn Country Select-a
-
   return (
     <StyledContainer
       bg={weather?.hasData ? bg?.backgroundColor : initialBackground}

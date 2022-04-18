@@ -16,6 +16,7 @@ export default function CountryDropdown({ handleCountryChange }: IProps) {
         setSelectedCountry(value?.Code!);
         handleCountryChange(value?.Code!);
       }}
+      name="countryDropdown"
       classNamePrefix="country"
       placeholder="Country"
       options={countryList}

@@ -12,6 +12,7 @@ export default function DegreeSwitch() {
   return (
     <div className="degreeSwitch">
       <ReactSwitch
+        name="degreeSwitch"
         onChange={handleChange}
         checked={!weather?.isCelsius!}
         uncheckedIcon={

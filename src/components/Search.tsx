@@ -20,6 +20,7 @@ export default function Search({ handleKeyDown }: IProps) {
         type="text"
         onKeyDown={handleKeyDown}
         onChange={handleOnChange}
+        name="search"
         value={city}
       />
     </span>
