@@ -12,6 +12,7 @@ import { SpinnerDiamond } from 'spinners-react';
 import { initialBackground } from '../config/colors';
 import { TemperatureChart } from './TemperatureChart';
 import Message from './Message';
+import { StyledHeader } from './styled/StyledHeader';
 
 export default function Container({ children }: IProps) {
   const bg = useBackgroundContext();
@@ -48,6 +49,9 @@ export default function Container({ children }: IProps) {
         </div>
       </StyledDisplayWrap>
       {children}
+      <StyledHeader>
+        <a href="https://www.linkedin.com/in/stefanikolic18/" target="_blank" rel='noreferrer'>stefaNikoli&copy;</a>
+      </StyledHeader>
     </StyledContainer>
   );
 }

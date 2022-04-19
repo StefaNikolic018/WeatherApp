@@ -10,7 +10,7 @@ export const StyledContainer = styled.div<IStyledProps>`
   height: 100%;
   min-height: 100vh;
   padding-inline: 10%;
-  padding-top: 5%;
+  padding-top: 10%;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -43,9 +43,11 @@ export const StyledContainer = styled.div<IStyledProps>`
     @media ${device.laptop} {
       .daily {
         order: 2;
+        margin-bottom: 2rem;
       }
       .chart {
         order: 1;
+        margin-bottom: 1rem;
       }
     }
   }
