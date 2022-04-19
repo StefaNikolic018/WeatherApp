@@ -4,19 +4,23 @@ export const StyledHeader = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  padding-top: .3rem;
-  padding-bottom: .3rem;
-  background: rgba(255,255,255,.2);
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  background: rgba(255, 255, 255, 0.2);
   text-align: center;
-  a{
+  a {
     font-size: 1.5rem;
     font-weight: 900;
     text-decoration: none;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     color: #434550;
-    font-family: 'Times New Roman', Times, serif;
-    &:hover{
-      color: rgba(67, 69, 80, .5);
+    font-family: 'Brush Script MT', cursive;
+    span {
+      font-size: 1rem;
+      font-weight: 900;
+    }
+    &:hover {
+      color: rgba(67, 69, 80, 0.5);
     }
   }
 `;

@@ -22,6 +22,16 @@ export default function Container({ children }: IProps) {
     <StyledContainer
       bg={weather?.hasData ? bg?.backgroundColor : initialBackground}
     >
+      <StyledHeader>
+        <a
+          href="https://www.linkedin.com/in/stefanikolic18/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          stefaNikolic
+          <span> &copy;</span>
+        </a>
+      </StyledHeader>
       <SearchWrap />
       <StyledDisplayWrap>
         <div className="dataWrap">
@@ -44,14 +54,12 @@ export default function Container({ children }: IProps) {
                 <TemperatureChart />
               </div>
             </>
-          ) : <Message message={weather?.message} />
-          }
+          ) : (
+            <Message message={weather?.message} />
+          )}
         </div>
       </StyledDisplayWrap>
       {children}
-      <StyledHeader>
-        <a href="https://www.linkedin.com/in/stefanikolic18/" target="_blank" rel='noreferrer'>stefaNikoli&copy;</a>
-      </StyledHeader>
     </StyledContainer>
   );
 }

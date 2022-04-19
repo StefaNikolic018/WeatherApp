@@ -10,7 +10,7 @@ export const StyledContainer = styled.div<IStyledProps>`
   height: 100%;
   min-height: 100vh;
   padding-inline: 10%;
-  padding-top: 10%;
+  padding-top: 4rem;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
