@@ -15,6 +15,8 @@ export const calculateColors = (value: number) => {
   switch (value) {
     case -40:
       return coldFallbackColor;
+    case -20:
+      return boundaryColor(colorSection);
     case 0:
       return boundaryColor(colorSection);
     case 20:

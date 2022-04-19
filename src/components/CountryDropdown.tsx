@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import { countryList } from '../config/countries';
+import { countryListWithFlag } from '../config/countries';
 
 interface IProps {
   handleCountryChange: (code: string) => void;
@@ -16,12 +16,13 @@ export default function CountryDropdown({ handleCountryChange }: IProps) {
         setSelectedCountry(value?.Code!);
         handleCountryChange(value?.Code!);
       }}
+
       name="countryDropdown"
       classNamePrefix="country"
       placeholder="Country"
-      options={countryList}
+      options={countryListWithFlag}
       isSearchable={false}
-      value={countryList.find((country) => {
+      value={countryListWithFlag.find((country) => {
         if (country.Code === selectedCountry) {
           return country.Code;
         }
@@ -33,8 +34,8 @@ export default function CountryDropdown({ handleCountryChange }: IProps) {
         <div className="country__option">
           <div className="flag">
             <img
-              src={`https://flagcdn.com/h24/${country.Code.toLowerCase()}.jpg`}
-              alt={`${country.Name}`}
+              src={country.Img}
+              alt={country.Name}
               // height="20px"
               width="30px"
             />

@@ -27,7 +27,7 @@ ChartJS.register(
   Legend
 );
 
-export function TemperatureChart() {
+export const TemperatureChart = () => {
   const weather = useDataContext();
 
   const [dailyTemps, setDailyTemps] = useState<IDay[] | undefined>(
@@ -72,6 +72,8 @@ export function TemperatureChart() {
         data: dailyTemps?.map((day) => day.temp),
         borderColor: 'rgba(172, 57, 155, 1)',
         backgroundColor: 'rgba(98, 57, 172, 0.44)',
+        pointRadius: 10,
+        pointHoverRadius: 15
       },
     ],
   };

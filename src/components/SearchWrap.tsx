@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDataContext } from '../contexts/DataContext';
 
 import { StyledSearchWrap } from './styled/StyledSearchWrap';
 import Search from './Search';
 import CountryDropdown from './CountryDropdown';
 import DegreeSwitch from './DegreeSwitch';
+import { belgrade } from '../config/api';
 
 export default function SearchWrap() {
   const weather = useDataContext();
@@ -19,6 +20,10 @@ export default function SearchWrap() {
   const handleCountryChange = (code: string) => {
     setCountryCode(code);
   };
+
+  useEffect(() => {
+    weather?.fetchData(belgrade);
+  }, []);
 
   return (
     <StyledSearchWrap

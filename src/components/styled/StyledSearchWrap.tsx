@@ -113,7 +113,7 @@ export const StyledSearchWrap = styled.div<IStyledProps>`
       gap: 10px;
       .flag {
         border-radius: 3px;
-        border: 2px solid black;
+        border: 2px solid gray;
         height: 20px;
         box-sizing: content-box;
       }

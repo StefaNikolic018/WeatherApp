@@ -11,6 +11,7 @@ import { useDataContext } from '../contexts/DataContext';
 import { SpinnerDiamond } from 'spinners-react';
 import { initialBackground } from '../config/colors';
 import { TemperatureChart } from './TemperatureChart';
+import Message from './Message';
 
 export default function Container({ children }: IProps) {
   const bg = useBackgroundContext();
@@ -42,16 +43,8 @@ export default function Container({ children }: IProps) {
                 <TemperatureChart />
               </div>
             </>
-          ) : Array.isArray(weather?.message) ? (
-            <h1 className="message">
-              City "{weather?.message[0]}" doesn't exist in "
-              {weather?.message[1]}".
-              <br />
-              Maybe it was a spelling mistake, try again.
-            </h1>
-          ) : (
-            <h1 className="message">{weather?.message}</h1>
-          )}
+          ) : <Message message={weather?.message} />
+          }
         </div>
       </StyledDisplayWrap>
       {children}

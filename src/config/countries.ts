@@ -1,4 +1,4 @@
-export const countryList = [
+const countryList = [
   { Code: 'AF', Name: 'Afghanistan' },
   { Code: 'AX', Name: '\u00c5land Islands' },
   { Code: 'AL', Name: 'Albania' },
@@ -53,7 +53,7 @@ export const countryList = [
   { Code: 'CD', Name: 'Congo, the Democratic Republic of the' },
   { Code: 'CK', Name: 'Cook Islands' },
   { Code: 'CR', Name: 'Costa Rica' },
-  { Code: 'CI', Name: "C\u00f4te d'Ivoire" },
+  { Code: 'CI', Name: 'C\u00f4te d\'Ivoire' },
   { Code: 'HR', Name: 'Croatia' },
   { Code: 'CU', Name: 'Cuba' },
   { Code: 'CW', Name: 'Cura\u00e7ao' },
@@ -116,11 +116,11 @@ export const countryList = [
   { Code: 'KZ', Name: 'Kazakhstan' },
   { Code: 'KE', Name: 'Kenya' },
   { Code: 'KI', Name: 'Kiribati' },
-  { Code: 'KP', Name: "Korea, Democratic People's Republic of" },
+  { Code: 'KP', Name: 'Korea, Democratic People\'s Republic of' },
   { Code: 'KR', Name: 'Korea, Republic of' },
   { Code: 'KW', Name: 'Kuwait' },
   { Code: 'KG', Name: 'Kyrgyzstan' },
-  { Code: 'LA', Name: "Lao People's Democratic Republic" },
+  { Code: 'LA', Name: 'Lao People\'s Democratic Republic' },
   { Code: 'LV', Name: 'Latvia' },
   { Code: 'LB', Name: 'Lebanon' },
   { Code: 'LS', Name: 'Lesotho' },
@@ -249,3 +249,7 @@ export const countryList = [
   { Code: 'ZM', Name: 'Zambia' },
   { Code: 'ZW', Name: 'Zimbabwe' },
 ];
+
+export const countryListWithFlag = countryList.map((country) => {
+  return { Code: country.Code, Name: country.Name, Img: `https://flagcdn.com/h24/${country.Code.toLowerCase()}.jpg` }
+});

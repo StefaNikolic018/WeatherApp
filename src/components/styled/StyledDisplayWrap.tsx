@@ -95,12 +95,14 @@ export const StyledDisplayWrap = styled.div`
       font-size: 2.5rem;
       line-height: 2rem;
       position: relative;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
       img {
         position: absolute;
         left: 55%;
         top: 0.9rem;
         width: 50px;
         height: 50px;
+        filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
       }
       span {
         font-size: 1rem;

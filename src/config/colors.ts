@@ -8,7 +8,7 @@ export const initialBackground = ' linear-gradient(135deg, rgba(18,55,134,.5) 0%
 export const colorSections: IcolorSection[] = [
     {
         start: -40,
-        end: -19,
+        end: -21,
         firstColor: {
             r: 18,
             g: 55,

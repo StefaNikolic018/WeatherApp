@@ -1,10 +1,10 @@
-import React, { useState, createContext, useContext, useEffect } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 
 import { IDataContext } from '../interfaces/contexts';
 import { WeatherData } from '../interfaces/data';
 import { IProps } from '../interfaces/standard';
 import { getCoord, getWeather } from '../utils/fetchWeatherData';
-import { belgrade } from '../config/api';
+// import { belgrade } from '../config/api';
 
 const DataContext = createContext<IDataContext | null>({
   isCelsius: true,
@@ -32,9 +32,9 @@ export default function DataProvider({ children }: IProps) {
     'No data to show.'
   );
   const [isCelsius, setIsCelsius] = useState(true);
-  useEffect(() => {
-    fetchData(belgrade);
-  }, []);
+  // useEffect(() => {
+  //   fetchData(belgrade);
+  // }, []);
 
   const fetchData = async (input: string) => {
     setIsFetching(true);
