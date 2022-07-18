@@ -9,9 +9,12 @@ Some ready made solutions that were used for minor components:
 - [react-switch](https://www.npmjs.com/package/react-switch)
 
 Formatting configuration defined with ESLint and Prettier.<br />
-Learning JEST Testing through this project.
+Learning JEST Testing through this project. <br />
+
+Project is deployed to [Github Pages](https://pages.github.com/), and demo can be seen [here](https://stefanikolic018.github.io/WeatherApp/).
 
 ## Idea and Usage
+
 Idea is that application shows current weather for Belgrade, Serbia on load.
 <img src="/public/screenshots/weather.png" alt="On load" title="On load" style="text-align: center">
 User can select preffered country from country dropdown, input a city, and also select preffered degree measurement unit(F/C).<br />
@@ -24,7 +27,7 @@ There is error handling for the following cases:
 - If user enters empty string
 <img src="/public/screenshots/empty.png" alt="Empty string" title="Empty string" style="text-align: center">
 
-View demo [here](https://stefanikolic018.github.io/WeatherApp/).
+
 
 ## Available Scripts
 
