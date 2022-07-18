@@ -14,7 +14,7 @@ export const belgrade = 'Belgrade,rs';
 
 export const coordUrl = (input: string) => {
   const inputData = cleanInputString(input);
-  return `http://api.openweathermap.org/geo/1.0/direct?q=${inputData[0]},${inputData[1]}${inputData[2]}&limit=5&appid=${apiKey}`;
+  return `https://api.openweathermap.org/geo/1.0/direct?q=${inputData[0]},${inputData[1]}${inputData[2]}&limit=5&appid=${apiKey}`;
 };
 
 export const weatherUrl = (lat: string, lon: string) => {

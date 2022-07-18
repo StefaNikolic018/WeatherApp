@@ -46,7 +46,7 @@ export default function Temperature({ type }: IProps) {
                 <p>{d.day}</p>
                 <h1>
                   <img
-                    src={`http://openweathermap.org/img/wn/${d.icon}@2x.png`}
+                    src={`https://openweathermap.org/img/wn/${d.icon}@2x.png`}
                     alt="Weather Icon"
                   />
                   {weather?.isCelsius ? d.temp : degreeConvertor(d.temp)}
