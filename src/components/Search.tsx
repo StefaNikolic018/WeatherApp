@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 
 interface IProps {
-  handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  handleSearch: (city: string) => void;
 }
 
-export default function Search({ handleKeyDown }: IProps) {
+export default function Search({ handleSearch }: IProps) {
   const [city, setCity] = useState('Belgrade');
 
   function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
     setCity(e.target.value);
+  }
+
+  function handleCitySearch(input: string | React.KeyboardEvent<HTMLInputElement>) {
+    if (typeof input === 'string') {
+      handleSearch(input);
+    } else {
+      if (input.code === 'Enter') {
+        handleSearch(input.currentTarget.value.toString());
+      }
+    }
   }
 
   return (
@@ -18,11 +28,13 @@ export default function Search({ handleKeyDown }: IProps) {
         autoComplete="off"
         placeholder="Enter city"
         type="text"
-        onKeyDown={handleKeyDown}
+        onKeyDown={handleCitySearch}
         onChange={handleOnChange}
         name="search"
         value={city}
       />
+      {/* HACK FOR MOBILE SEARCH BECAUSE OF CHROME BUG WITH onKeyDown */}
+      <span id="iconClick" onClick={() => handleCitySearch(city)}></span>
     </span>
   );
 }

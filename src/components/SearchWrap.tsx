@@ -11,13 +11,9 @@ export default function SearchWrap() {
   const weather = useDataContext();
   const [countryCode, setCountryCode] = useState('RS');
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.code === 'Enter' || e.code === '13' || e.key === '13') {
-      console.log(e.code)
-      console.log(e.key)
-      weather?.fetchData(`${e.currentTarget.value.toString()},${countryCode}`);
-    }
-  };
+  const handleSearch = (city: string) => {
+    weather?.fetchData(`${city},${countryCode}`);
+  }
 
   const handleCountryChange = (code: string) => {
     setCountryCode(code);
@@ -32,7 +28,7 @@ export default function SearchWrap() {
       loading={weather?.isFetching ? weather?.isFetching.toString() : undefined}
     >
       <CountryDropdown handleCountryChange={handleCountryChange} />
-      <Search handleKeyDown={handleKeyDown} />
+      <Search handleSearch={handleSearch} />
       <DegreeSwitch />
     </StyledSearchWrap>
   );

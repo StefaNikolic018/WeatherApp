@@ -72,6 +72,15 @@ export const StyledSearchWrap = styled.div<IStyledProps>`
         transform: rotate(360deg);
       }
     }
+    #iconClick {
+      position: absolute;
+      top: 0;
+      right: .5rem;
+      width: 3rem;
+      height: 3rem;
+      cursor: pointer;
+      z-index: 1;
+    }
   }
   .country {
     &__dropdown {
