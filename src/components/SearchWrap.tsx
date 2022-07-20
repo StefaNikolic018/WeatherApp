@@ -12,7 +12,7 @@ export default function SearchWrap() {
   const [countryCode, setCountryCode] = useState('RS');
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.code === 'Enter') {
+    if (e.code === 'Enter' || e.code === '13') {
       weather?.fetchData(`${e.currentTarget.value.toString()},${countryCode}`);
     }
   };
